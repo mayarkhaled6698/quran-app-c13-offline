@@ -6,8 +6,15 @@ import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
 import 'package:islami_c13_offline/presentation/screens/home/tabs/hadith/widgets/quran_item.dart';
 
-class QuranTab extends StatelessWidget {
+class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
+
+  @override
+  State<QuranTab> createState() => _QuranTabState();
+}
+
+class _QuranTabState extends State<QuranTab> {
+  String userText = '';
 
   @override
   Widget build(BuildContext context) {
@@ -21,75 +28,53 @@ class QuranTab extends StatelessWidget {
                 AssetImages.mainBackground,
               ),
               fit: BoxFit.cover)),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         Image.asset(AssetImages.islamiLogo),
         buildSearchField(),
         const SizedBox(
           height: 20,
         ),
         const Text(
-          'Most recent',
+          'Suras list',
           style: AppStyles.whiteSugarBold16,
         ),
         buildQuranList(),
       ]),
     );
-    // child: Column(
-    //   crossAxisAlignment: CrossAxisAlignment.stretch,
-    //   children: [
-    //     Image.asset(AssetImages.islamiLogo),
-    //     buildSearchField(),
-    //     const SizedBox(
-    //       height: 10,
-    //     ),
-    //     const Text(
-    //       'Most Recent',
-    //       textAlign: TextAlign.start,
-    //       style: TextStyle(
-    //           fontSize: 16,
-    //           fontWeight: FontWeight.bold,
-    //           color: ColorsManager.whiteSugar),
-    //     ),
-    //     // SizedBox(
-    //     //   height: 150,
-    //     //   child: ListView.builder(
-    //     //
-    //     //     scrollDirection: Axis.horizontal,
-    //     //     itemBuilder: (context, index) => MostRecentItem(),
-    //     //     itemCount: 6,
-    //     //   ),
-    //     // ),
-    //     const Text(
-    //       'Quran',
-    //       textAlign: TextAlign.start,
-    //       style: TextStyle(
-    //           fontSize: 16,
-    //           fontWeight: FontWeight.bold,
-    //           color: ColorsManager.whiteSugar),
-    //     ),
-    //      buildQuranList(),
-    //   ],
-    // ));
   }
 
-  buildQuranList() => Expanded(
-        child: ListView.separated(
-            itemCount: AppConstant.suraNamesAr.length,
-            itemBuilder: (context, index) {
-              return QuranItem(
-                index: index,
-              );
-            },
-            separatorBuilder: (context, index) => const Divider(
-                  color: ColorsManager.white,
-                  endIndent: 30,
-                  indent: 30,
-                  height: 30,
-                )),
-      );
+  buildQuranList() {
+    var filteredSuras = AppConstant.suras
+        .where(
+          (sura) =>
+              sura.nameEn.toLowerCase().contains(userText.toLowerCase()) ||
+              sura.snameAr.contains(userText),
+        )
+        .toList();
+    return Expanded(
+      child: ListView.separated(
+          itemCount: filteredSuras.length,
+          itemBuilder: (context, index) {
+            return QuranItem(
+              index: index,
+              sura: filteredSuras[index],
+            );
+          },
+          separatorBuilder: (context, index) => const Divider(
+                color: ColorsManager.white,
+                endIndent: 30,
+                indent: 30,
+                height: 30,
+              )),
+    );
+  }
 
   Widget buildSearchField() {
     return TextField(
+      onChanged: (input) {
+        userText = input;
+        setState(() {});
+      },
       cursorColor: ColorsManager.white,
       style: const TextStyle(color: ColorsManager.white),
       decoration: InputDecoration(

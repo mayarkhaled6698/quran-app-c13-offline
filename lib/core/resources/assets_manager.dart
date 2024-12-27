@@ -6,6 +6,10 @@ abstract final class AssetImages {
   static const String splashImage = '${base}splash_image.png';
   static const String mostRecentImage = '${base}most_recent_image.png';
   static const String mainBackground = '${base}main_bg.png';
+  static const String islamicShapeLeft = '${base}islamic_shape_left.png';
+  static const String islamicShapeRight = '${base}islamic_shape_right.png';
+  static const String hadithMainBackground = '${base}hadith_main_bg.png';
+  static const String quranBottomImage = '${base}quran_bottom_image.png';
 }
 
 abstract final class SvgAssets {
