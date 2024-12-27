@@ -10,6 +10,7 @@ abstract final class AssetImages {
   static const String islamicShapeRight = '${base}islamic_shape_right.png';
   static const String hadithMainBackground = '${base}hadith_main_bg.png';
   static const String quranBottomImage = '${base}quran_bottom_image.png';
+  static const String hadithCardBg = '${base}hadith_card_bg.png';
 }
 
 abstract final class SvgAssets {
