@@ -28,5 +28,7 @@ abstract final class SvgAssets {
   static const String selectedHadithIcon = '${base}selected_hadith_icon.svg';
   static const String quranSearchIcon = '${base}quran_search_icon.svg';
   static const String muteIcon = '${base}Vector.svg';
-  static const String volumeHigh = '${base}Volume High.svg';
+  static const String unmute = '${base}unmute.svg';
+  static const String playIcon = '${base}Play.svg';
+  static const String pauseIcon = '${base}PauseIcon.svg';
 }
