@@ -99,19 +99,19 @@ class _RadioTabState extends State<RadioTab> {
                 if (_showRadioWidget)
                   const RadioWidget(
                     name: 'Radio Ibrahim Al-Akdar',
-                    pauseImage: SvgAssets.pauseIcon,
+                    pauseImage: SvgAssets.playIcon,
                     muteImage: SvgAssets.unmute,
                     backgroundImage: AssetImages.mosques,
                   ),
                 const RadioWidget(
                   name: 'Radio Al-Qaria Yassen',
-                  pauseImage: SvgAssets.playIcon,
+                  pauseImage: SvgAssets.pauseIcon,
                   muteImage: SvgAssets.muteIcon,
                   backgroundImage: AssetImages.soundWave,
                 ),
                 const RadioWidget(
                   name: 'Radio Ahmed Al-Trabulsi',
-                  pauseImage: SvgAssets.pauseIcon,
+                  pauseImage: SvgAssets.playIcon,
                   muteImage: SvgAssets.unmute,
                   backgroundImage: AssetImages.mosques,
                 ),
@@ -119,7 +119,7 @@ class _RadioTabState extends State<RadioTab> {
                   name: 'Radio Al-Qaria Yassen',
                   pauseImage: SvgAssets.playIcon,
                   muteImage: SvgAssets.muteIcon,
-                  backgroundImage: AssetImages.soundWave,
+                  backgroundImage: AssetImages.mosques,
                 ),
               ],
             ),

@@ -10,8 +10,8 @@ abstract final class AssetImages {
   static const String alsebhaBody = '${base}SebhaBody 1.png';
   static const String womenReadingQuran = '${base}woman-reading-quran.png';
   static const String alsebhaBackgound = '${base}AlsebhaBG1.png';
-  static const String soundWave = '${base}soundWave.png';
-  static const String mosques = '${base}mosques.png';
+  static const String soundWave = '${base}sound_wave.png';
+  static const String mosques = '${base}Mosque.png';
 }
 
 abstract final class SvgAssets {

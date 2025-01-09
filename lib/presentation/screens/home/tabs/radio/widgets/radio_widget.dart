@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
 
+import '../../../../../../core/resources/assets_manager.dart';
+
 class RadioWidget extends StatelessWidget {
   final String name;
   final String muteImage;
@@ -19,6 +21,7 @@ class RadioWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isSoundWaveBackground = backgroundImage == AssetImages.soundWave;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
       child: Container(
@@ -38,7 +41,7 @@ class RadioWidget extends StatelessWidget {
                 color: ColorsManager.black,
               ),
             ),
-            const SizedBox(height: 10),
+            if (isSoundWaveBackground) const SizedBox(height: 24),
             Stack(alignment: AlignmentDirectional.center, children: [
               Image.asset(
                 backgroundImage,
