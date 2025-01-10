@@ -37,4 +37,6 @@ class AppStyles {
     fontWeight: FontWeight.bold,
     color: ColorsManager.white,
   );
+  static const TextStyle blackAcc700 = TextStyle(
+      fontWeight: FontWeight.w700, fontSize: 24, color: ColorsManager.blackAcc);
 }

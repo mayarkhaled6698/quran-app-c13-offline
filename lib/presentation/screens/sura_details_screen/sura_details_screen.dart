@@ -26,6 +26,14 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
   }
 
   @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    print('_SuraDetailsScreenState is disposed');
+    arguments.mostRecentSurasKey.currentState?.getMostRecentSuras();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: ColorsManager.blackAcc,

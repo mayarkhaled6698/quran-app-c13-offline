@@ -64,18 +64,22 @@ class _HadithTabState extends State<HadithTab> {
           borderRadius: BorderRadius.circular(20),
         ),
         width: double.infinity,
-        child: Column(
-          children: [
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Image.asset(
-                      AssetImages.islamicShapeLeft,
-                      color: ColorsManager.black,
-                    ),
+        child: ahadithList.isEmpty
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : Column(
+                children: [
+                  Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Image.asset(
+                            AssetImages.islamicShapeLeft,
+                            color: ColorsManager.black,
+                          ),
                     Image.asset(
                       AssetImages.islamicShapeRight,
                       color: ColorsManager.black,

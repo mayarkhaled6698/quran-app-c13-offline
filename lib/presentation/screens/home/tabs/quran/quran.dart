@@ -4,7 +4,8 @@ import 'package:islami_c13_offline/core/resources/app_constant.dart';
 import 'package:islami_c13_offline/core/resources/app_styles.dart';
 import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
-import 'package:islami_c13_offline/presentation/screens/home/tabs/hadith/widgets/quran_item.dart';
+import 'package:islami_c13_offline/presentation/screens/home/tabs/quran/widgets/most_recent_item.dart';
+import 'package:islami_c13_offline/presentation/screens/home/tabs/quran/widgets/quran_item.dart';
 
 class QuranTab extends StatefulWidget {
   const QuranTab({super.key});
@@ -15,6 +16,8 @@ class QuranTab extends StatefulWidget {
 
 class _QuranTabState extends State<QuranTab> {
   String userText = '';
+  GlobalKey<MostRecentSurasWidgetState> mostRecentSurasKey =
+      GlobalKey<MostRecentSurasWidgetState>();
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +36,9 @@ class _QuranTabState extends State<QuranTab> {
         buildSearchField(),
         const SizedBox(
           height: 20,
+        ),
+        MostRecentSurasWidget(
+          key: mostRecentSurasKey,
         ),
         const Text(
           'Suras list',
@@ -56,7 +62,7 @@ class _QuranTabState extends State<QuranTab> {
           itemCount: filteredSuras.length,
           itemBuilder: (context, index) {
             return QuranItem(
-              index: index,
+              mostRecentSurasKey: mostRecentSurasKey,
               sura: filteredSuras[index],
             );
           },
