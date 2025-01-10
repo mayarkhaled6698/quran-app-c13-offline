@@ -31,21 +31,24 @@ class _QuranTabState extends State<QuranTab> {
                 AssetImages.mainBackground,
               ),
               fit: BoxFit.cover)),
-      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        Image.asset(AssetImages.islamiLogo),
-        buildSearchField(),
-        const SizedBox(
-          height: 20,
-        ),
-        MostRecentSurasWidget(
-          key: mostRecentSurasKey,
-        ),
-        const Text(
-          'Suras list',
-          style: AppStyles.whiteSugarBold16,
-        ),
-        buildQuranList(),
-      ]),
+      child: SingleChildScrollView(
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          Image.asset(AssetImages.islamiLogo),
+          buildSearchField(),
+          const SizedBox(
+            height: 20,
+          ),
+          MostRecentSurasWidget(
+            key: mostRecentSurasKey,
+          ),
+          const Text(
+            'Suras list',
+            style: AppStyles.whiteSugarBold16,
+          ),
+          buildQuranList(),
+        ]),
+      ),
     );
   }
 
@@ -57,22 +60,22 @@ class _QuranTabState extends State<QuranTab> {
               sura.snameAr.contains(userText),
         )
         .toList();
-    return Expanded(
-      child: ListView.separated(
-          itemCount: filteredSuras.length,
-          itemBuilder: (context, index) {
-            return QuranItem(
-              mostRecentSurasKey: mostRecentSurasKey,
-              sura: filteredSuras[index],
-            );
-          },
-          separatorBuilder: (context, index) => const Divider(
-                color: ColorsManager.white,
-                endIndent: 30,
-                indent: 30,
-                height: 30,
-              )),
-    );
+    return ListView.separated(
+        physics: NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        itemCount: filteredSuras.length,
+        itemBuilder: (context, index) {
+          return QuranItem(
+            mostRecentSurasKey: mostRecentSurasKey,
+            sura: filteredSuras[index],
+          );
+        },
+        separatorBuilder: (context, index) => const Divider(
+              color: ColorsManager.white,
+              endIndent: 30,
+              indent: 30,
+              height: 30,
+            ));
   }
 
   Widget buildSearchField() {

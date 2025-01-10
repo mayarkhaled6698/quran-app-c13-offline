@@ -31,7 +31,9 @@ class MostRecentSurasWidgetState extends State<MostRecentSurasWidget> {
   Widget build(BuildContext context) {
     return mostRecentSuras.isEmpty
         ? Container()
-        : Expanded(
+        : SizedBox(
+            height: MediaQuery.of(context).size.height * 0.22,
+            //width: MediaQuery.of(context).size.width * 0.2,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
