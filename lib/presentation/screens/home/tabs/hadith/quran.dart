@@ -4,7 +4,8 @@ import 'package:islami_c13_offline/core/resources/app_constant.dart';
 import 'package:islami_c13_offline/core/resources/app_styles.dart';
 import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
-import 'package:islami_c13_offline/presentation/screens/home/tabs/hadith/widgets/quran_item.dart';
+
+import '../quran/widgets/quran_item.dart';
 
 class QuranTab extends StatelessWidget {
   const QuranTab({super.key});
