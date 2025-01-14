@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
+import '../presentation/screens/home/tabs/quran/widgets/most_recent_item.dart';
+
 class SuraDetailsArguments {
   final String nameEn;
   final String nameAr;
