@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:introduction_screen/introduction_screen.dart';
 import 'package:islami_c13_offline/core/resources/app_styles.dart';
 import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
@@ -20,10 +19,8 @@ class Onboarding extends StatelessWidget {
 
   PageDecoration pageDecoration = PageDecoration(
     imageFlex: 2,
-    titleTextStyle: TextStyle(
-        fontSize: 24.0, fontWeight: FontWeight.w700, color: ColorsManager.gold),
-    bodyTextStyle: TextStyle(
-        fontSize: 20.0, fontWeight: FontWeight.w700, color: ColorsManager.gold),
+    titleTextStyle: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w700, color: ColorsManager.gold),
+    bodyTextStyle: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w700, color: ColorsManager.gold),
     bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
     pageColor: ColorsManager.blackAcc,
     imagePadding: EdgeInsets.zero,
@@ -40,13 +37,8 @@ class Onboarding extends StatelessWidget {
 
       showDoneButton: true,
 
-      dotsDecorator: DotsDecorator(
-          color: Colors.grey,
-          activeColor: ColorsManager.gold,
-          activeSize: Size(18, 7),
-          size: Size(7, 7),
-          activeShape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
+      dotsDecorator:
+          DotsDecorator(color: Colors.grey, activeColor: ColorsManager.gold, activeSize: Size(18, 7), size: Size(7, 7), activeShape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8))),
 
       done: Text(
         'Finish',
@@ -93,15 +85,10 @@ class Onboarding extends StatelessWidget {
           image: _buildImage(AssetImages.onboarding3),
           decoration: pageDecoration,
         ),
-        PageViewModel(
-            title: "Bearish",
-            body: "Praise the name of your Lord, the Most High",
-            image: _buildImage(AssetImages.onboarding4),
-            decoration: pageDecoration),
+        PageViewModel(title: "Bearish", body: "Praise the name of your Lord, the Most High", image: _buildImage(AssetImages.onboarding4), decoration: pageDecoration),
         PageViewModel(
             title: "Holy Quran Radio",
-            body:
-                "You can listen to the Holy Quran Radio through the application for free and easily",
+            body: "You can listen to the Holy Quran Radio through the application for free and easily",
             image: _buildImage(AssetImages.onboarding5),
             decoration: pageDecoration),
       ],
