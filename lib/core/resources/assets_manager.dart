@@ -12,6 +12,16 @@ abstract final class AssetImages {
   static const String alsebhaBackgound = '${base}AlsebhaBG1.png';
   static const String soundWave = '${base}sound_wave.png';
   static const String mosques = '${base}Mosque.png';
+  static const String islamicShapeLeft = '${base}islamic_shape_left.png';
+  static const String islamicShapeRight = '${base}islamic_shape_right.png';
+  static const String hadithMainBackground = '${base}hadith_main_bg.png';
+  static const String quranBottomImage = '${base}quran_bottom_image.png';
+  static const String hadithCardBg = '${base}hadith_card_bg.png';
+  static const String onboarding1 = '${base}onboarding1.png';
+  static const String onboarding2 = '${base}onboarding2.png';
+  static const String onboarding3 = '${base}onboarding3.png';
+  static const String onboarding4 = '${base}onboarding4.png';
+  static const String onboarding5 = '${base}onboarding5.png';
 }
 
 abstract final class SvgAssets {
