@@ -4,7 +4,7 @@ import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
 import 'package:islami_c13_offline/presentation/screens/home/tabs/hadith/quran.dart';
 import 'package:islami_c13_offline/presentation/screens/home/tabs/pray_times/hadith_tab.dart';
-import 'package:islami_c13_offline/presentation/screens/home/tabs/quran/hadith_tab.dart';
+import 'package:islami_c13_offline/presentation/screens/home/tabs/hadith/hadith_tab.dart';
 import 'package:islami_c13_offline/presentation/screens/home/tabs/radio/radio.dart';
 import 'package:islami_c13_offline/presentation/screens/home/tabs/tasbeh/tasbeh_tab.dart';
 
