@@ -35,27 +35,18 @@ class QuranItem extends StatelessWidget {
             children: [
               Text(
                 AppConstant.suraNamesEn[index],
-                style: TextStyle(
-                    color: ColorsManager.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
                 '${AppConstant.versesNumber[index]} verses',
-                style: TextStyle(
-                    color: ColorsManager.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold),
+                style: TextStyle(color: ColorsManager.white, fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ],
           ),
         ),
         Text(
           AppConstant.suraNamesAr[index],
-          style: TextStyle(
-              color: ColorsManager.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold),
+          style: TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ],
     );
@@ -68,9 +59,5 @@ class SuraDM {
   String versesNumber;
   int index;
 
-  SuraDM(
-      {required this.suraNameEn,
-      required this.suraNameAr,
-      required this.versesNumber,
-      required this.index});
+  SuraDM({required this.suraNameEn, required this.suraNameAr, required this.versesNumber, required this.index});
 }

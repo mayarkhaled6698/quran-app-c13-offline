@@ -94,20 +94,11 @@ class QuranTab extends StatelessWidget {
       style: const TextStyle(color: ColorsManager.white),
       decoration: InputDecoration(
         contentPadding: EdgeInsets.zero,
-        prefixIcon: Container(
-            padding: EdgeInsets.all(14),
-            child: SvgPicture.asset(SvgAssets.quranSearchIcon)),
+        prefixIcon: Container(padding: EdgeInsets.all(14), child: SvgPicture.asset(SvgAssets.quranSearchIcon)),
         hintText: 'Sura name',
-        hintStyle: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-            color: ColorsManager.whiteSugar),
-        focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ColorsManager.gold, width: 1)),
-        border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: ColorsManager.gold, width: 1)),
+        hintStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: ColorsManager.whiteSugar),
+        focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: ColorsManager.gold, width: 1)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10), borderSide: BorderSide(color: ColorsManager.gold, width: 1)),
       ),
     );
   }

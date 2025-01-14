@@ -17,13 +17,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int selectedIndex = 0;
-  List<Widget> tabs = const [
-    QuranTab(),
-    HadithTab(),
-    TasbehTab(),
-    RadioTab(),
-    PrayTimesTab()
-  ];
+  List<Widget> tabs = const [QuranTab(), HadithTab(), TasbehTab(), RadioTab(), PrayTimesTab()];
 
   @override
   Widget build(BuildContext context) {
@@ -40,26 +34,11 @@ class _HomeState extends State<Home> {
             setState(() {});
           },
           items: [
-            BottomNavigationBarItem(
-                icon: buildBottomNavBarIcon(SvgAssets.selectedQuranIcon,
-                    SvgAssets.quranIcon, selectedIndex == 0),
-                label: 'Quran'),
-            BottomNavigationBarItem(
-                icon: buildBottomNavBarIcon(SvgAssets.selectedHadithIcon,
-                    SvgAssets.hadithIcon, selectedIndex == 1),
-                label: 'Hadith'),
-            BottomNavigationBarItem(
-                icon: buildBottomNavBarIcon(SvgAssets.selectedTasbehIcon,
-                    SvgAssets.tasbehIcon, selectedIndex == 2),
-                label: 'Tasbeh'),
-            BottomNavigationBarItem(
-                icon: buildBottomNavBarIcon(SvgAssets.selectedRadioIcon,
-                    SvgAssets.radioIcon, selectedIndex == 3),
-                label: 'Radio'),
-            BottomNavigationBarItem(
-                icon: buildBottomNavBarIcon(SvgAssets.selectedPrayTimesIcon,
-                    SvgAssets.prayTimesIcon, selectedIndex == 4),
-                label: 'Pray times'),
+            BottomNavigationBarItem(icon: buildBottomNavBarIcon(SvgAssets.selectedQuranIcon, SvgAssets.quranIcon, selectedIndex == 0), label: 'Quran'),
+            BottomNavigationBarItem(icon: buildBottomNavBarIcon(SvgAssets.selectedHadithIcon, SvgAssets.hadithIcon, selectedIndex == 1), label: 'Hadith'),
+            BottomNavigationBarItem(icon: buildBottomNavBarIcon(SvgAssets.selectedTasbehIcon, SvgAssets.tasbehIcon, selectedIndex == 2), label: 'Tasbeh'),
+            BottomNavigationBarItem(icon: buildBottomNavBarIcon(SvgAssets.selectedRadioIcon, SvgAssets.radioIcon, selectedIndex == 3), label: 'Radio'),
+            BottomNavigationBarItem(icon: buildBottomNavBarIcon(SvgAssets.selectedPrayTimesIcon, SvgAssets.prayTimesIcon, selectedIndex == 4), label: 'Pray times'),
           ]);
 
   Widget buildBottomNavBarIcon(
@@ -70,9 +49,7 @@ class _HomeState extends State<Home> {
     return isSelected
         ? Container(
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
-            decoration: BoxDecoration(
-                color: ColorsManager.black60,
-                borderRadius: BorderRadius.circular(66)),
+            decoration: BoxDecoration(color: ColorsManager.black60, borderRadius: BorderRadius.circular(66)),
             child: SvgPicture.asset(
               selectedImagePath,
               width: 19,
