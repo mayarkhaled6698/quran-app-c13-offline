@@ -20,13 +20,13 @@ class QuranItem extends StatelessWidget {
             SvgPicture.asset(SvgAssets.islamicBg),
             Text(
               '${index + 1}',
-              style: TextStyle(
+              style: const TextStyle(
                 color: ColorsManager.white,
               ),
             )
           ],
         ),
-        SizedBox(
+        const SizedBox(
           width: 24,
         ),
         Expanded(
@@ -34,19 +34,19 @@ class QuranItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppConstant.suraNamesEn[index],
-                style: TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
+                AppConstant.suras[index].nameEn,
+                style: const TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
               ),
               Text(
-                '${AppConstant.versesNumber[index]} verses',
-                style: TextStyle(color: ColorsManager.white, fontSize: 14, fontWeight: FontWeight.bold),
+                '${AppConstant.suras[index].numberOfVerses} verses',
+                style: const TextStyle(color: ColorsManager.white, fontSize: 14, fontWeight: FontWeight.bold),
               ),
             ],
           ),
         ),
         Text(
-          AppConstant.suraNamesAr[index],
-          style: TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
+          AppConstant.suras[index].snameAr,
+          style: const TextStyle(color: ColorsManager.white, fontSize: 20, fontWeight: FontWeight.bold),
         ),
       ],
     );

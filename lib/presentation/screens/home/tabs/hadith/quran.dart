@@ -75,7 +75,7 @@ class QuranTab extends StatelessWidget {
 
   buildQuranList() => Expanded(
         child: ListView.separated(
-            itemCount: AppConstant.suraNamesAr.length,
+            itemCount: AppConstant.suras.length,
             itemBuilder: (context, index) {
               return QuranItem(
                 index: index,

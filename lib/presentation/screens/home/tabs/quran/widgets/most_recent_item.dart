@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:islami_c13_offline/core/prefs_handler/prefs_handler.dart';
 import 'package:islami_c13_offline/core/resources/app_styles.dart';
 import 'package:islami_c13_offline/core/resources/assets_manager.dart';
 import 'package:islami_c13_offline/core/resources/colors_manager.dart';
