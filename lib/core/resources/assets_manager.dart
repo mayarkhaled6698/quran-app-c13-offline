@@ -22,6 +22,10 @@ abstract final class AssetImages {
   static const String onboarding3 = '${base}onboarding3.png';
   static const String onboarding4 = '${base}onboarding4.png';
   static const String onboarding5 = '${base}onboarding5.png';
+  static const String praysTimesBG = '${base}taj-mahal-agra-india 1.png';
+  static const String bellIcon = '${base}bell-icon 1.png';
+  static const String commentBubbleIcon = '${base}comment-bubble-icon 1.png';
+  static const String volume = '${base}Volume Slash.png';
 }
 
 abstract final class SvgAssets {
