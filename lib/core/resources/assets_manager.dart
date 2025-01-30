@@ -26,6 +26,7 @@ abstract final class AssetImages {
   static const String bellIcon = '${base}bell-icon 1.png';
   static const String commentBubbleIcon = '${base}comment-bubble-icon 1.png';
   static const String volume = '${base}Volume Slash.png';
+  static const String prayTimeBackground = '${base}pray-time-background.png';
 }
 
 abstract final class SvgAssets {

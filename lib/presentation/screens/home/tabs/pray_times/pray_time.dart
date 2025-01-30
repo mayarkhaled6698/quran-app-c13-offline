@@ -37,93 +37,95 @@ class _PrayTimesTabState extends State<PrayTimesTab> {
                   height: 20,
                 ),
                 Container(
-                  decoration: BoxDecoration(
-                    color: ColorsManager.gold,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  margin: const EdgeInsets.only(left: 10, right: 10),
-                  height: 301,
-                  width: 390,
-                  child: Column(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 23, vertical: 12),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    decoration: BoxDecoration(
+                      color: ColorsManager.brown,
+                      borderRadius: BorderRadius.circular(40),
+                    ),
+                    margin: const EdgeInsets.only(left: 10, right: 10),
+                    child: Stack(
+                      children: [
+                        Image.asset(AssetImages.prayTimeBackground),
+                        Column(
                           children: [
-                            Text(
-                              '16 Jul ,\n2024',
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ColorsManager.whiteSugar),
-                            ),
-                            Column(
-                              children: [
-                                Text(
-                                  'Pray Time',
-                                  style: TextStyle(color: ColorsManager.black60),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(top: 8),
-                                  child: Text(
-                                    'Tuesday',
-                                    style: TextStyle(color: ColorsManager.blackAcc),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 23, vertical: 12),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Text(
+                                    '16 Jul ,\n2024',
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ColorsManager.whiteSugar),
                                   ),
-                                ),
-                              ],
-                            ),
-                            Text(
-                              '09 Muh, \n 1446',
-                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ColorsManager.whiteSugar),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 20),
-                        child: CarouselSlider.builder(
-                          itemBuilder: (context, index, realIndex) {
-                            return buildPrayTimeWidget();
-                          },
-                          options: CarouselOptions(
-                            autoPlay: true,
-                            aspectRatio: 2.5,
-                            enlargeCenterPage: true,
-                            viewportFraction: 0.256,
-                          ),
-                          itemCount: 7,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 18),
-                        child: Row(
-                          children: [
-                            const Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.only(left: 24),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Next Pray - ',
-                                      style: TextStyle(color: ColorsManager.blackAcc),
-                                    ),
-                                    Text(
-                                      '02:32 ',
-                                      style: TextStyle(color: ColorsManager.blackAcc, fontWeight: FontWeight.w700),
-                                    ),
-                                  ],
-                                ),
+                                  Column(
+                                    children: [
+                                      Text(
+                                        'Pray Time',
+                                        style: TextStyle(color: ColorsManager.black60),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsets.only(top: 8),
+                                        child: Text(
+                                          'Tuesday',
+                                          style: TextStyle(color: ColorsManager.blackAcc),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    '09 Muh, \n 1446',
+                                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700, color: ColorsManager.whiteSugar),
+                                  ),
+                                ],
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsets.only(right: 24),
-                              child: Image.asset(AssetImages.volume),
+                              padding: const EdgeInsets.only(top: 10),
+                              child: CarouselSlider.builder(
+                                itemBuilder: (context, index, realIndex) {
+                                  return buildPrayTimeWidget();
+                                },
+                                options: CarouselOptions(
+                                  autoPlay: true,
+                                  aspectRatio: 2.5,
+                                  enlargeCenterPage: true,
+                                  viewportFraction: 0.256,
+                                ),
+                                itemCount: 7,
+                              ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10),
+                              child: Row(
+                                children: [
+                                  const Expanded(
+                                    child: Padding(
+                                      padding: EdgeInsets.only(left: 24),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            'Next Pray - ',
+                                            style: TextStyle(color: ColorsManager.blackAcc),
+                                          ),
+                                          Text(
+                                            '02:32 ',
+                                            style: TextStyle(color: ColorsManager.blackAcc, fontWeight: FontWeight.w700),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 24),
+                                    child: Image.asset(AssetImages.volume),
+                                  ),
+                                ],
+                              ),
+                            )
                           ],
                         ),
-                      )
-                    ],
-                  ),
-                ),
+                      ],
+                    )),
                 const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
                   child: Text(

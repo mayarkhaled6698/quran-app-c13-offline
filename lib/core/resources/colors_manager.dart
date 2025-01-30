@@ -7,4 +7,5 @@ abstract final class ColorsManager {
   static const Color blackAcc = Color(0xff202020);
   static const Color black60 = Color(0x99202020);
   static const Color whiteSugar = Color(0xFFFEFFE8);
+  static const Color brown = Color(0xFF856B3F);
 }
