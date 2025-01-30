@@ -121,6 +121,18 @@ class _RadioTabState extends State<RadioTab> {
                   muteImage: SvgAssets.muteIcon,
                   backgroundImage: AssetImages.mosques,
                 ),
+                const RadioWidget(
+                  name: 'Radio Ibrahim Al-Akdar',
+                  pauseImage: SvgAssets.playIcon,
+                  muteImage: SvgAssets.unmute,
+                  backgroundImage: AssetImages.mosques,
+                ),
+                const RadioWidget(
+                  name: 'Radio Al-Qaria Yassen',
+                  pauseImage: SvgAssets.pauseIcon,
+                  muteImage: SvgAssets.muteIcon,
+                  backgroundImage: AssetImages.soundWave,
+                ),
               ],
             ),
           ),

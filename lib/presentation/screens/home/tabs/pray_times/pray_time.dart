@@ -1,7 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../../core/resources/app_styles.dart';
 import '../../../../../core/resources/assets_manager.dart';
 import '../../../../../core/resources/colors_manager.dart';
 
@@ -86,10 +84,10 @@ class _PrayTimesTabState extends State<PrayTimesTab> {
                             return buildPrayTimeWidget();
                           },
                           options: CarouselOptions(
-                            autoPlay: false,
+                            autoPlay: true,
                             aspectRatio: 2.5,
                             enlargeCenterPage: true,
-                            viewportFraction: 0.3,
+                            viewportFraction: 0.256,
                           ),
                           itemCount: 7,
                         ),
@@ -97,17 +95,29 @@ class _PrayTimesTabState extends State<PrayTimesTab> {
                       Padding(
                         padding: const EdgeInsets.only(top: 18),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text(
-                              'Next Pray - ',
-                              style: TextStyle(color: ColorsManager.blackAcc),
+                            const Expanded(
+                              child: Padding(
+                                padding: EdgeInsets.only(left: 24),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Next Pray - ',
+                                      style: TextStyle(color: ColorsManager.blackAcc),
+                                    ),
+                                    Text(
+                                      '02:32 ',
+                                      style: TextStyle(color: ColorsManager.blackAcc, fontWeight: FontWeight.w700),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
-                            const Text(
-                              '02:32 ',
-                              style: TextStyle(color: ColorsManager.blackAcc, fontWeight: FontWeight.w700),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 24),
+                              child: Image.asset(AssetImages.volume),
                             ),
-                            Image.asset(AssetImages.volume),
                           ],
                         ),
                       )
@@ -182,40 +192,42 @@ class _PrayTimesTabState extends State<PrayTimesTab> {
 }
 
 buildPrayTimeWidget() {
-  return Container(
-    margin: const EdgeInsets.only(bottom: 8),
-    padding: const EdgeInsets.all(8),
-    decoration: BoxDecoration(
-      color: ColorsManager.black60,
-      borderRadius: BorderRadius.circular(20),
-    ),
-    child: const Column(
-      children: [
-        Text(
-          'Asr',
-          style: TextStyle(
-            color: ColorsManager.whiteSugar,
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+  return SingleChildScrollView(
+    child: Container(
+      margin: const EdgeInsets.only(bottom: 8),
+      padding: const EdgeInsets.all(8),
+      decoration: BoxDecoration(
+        color: ColorsManager.black60,
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: const Column(
+        children: [
+          Text(
+            'Asr',
+            style: TextStyle(
+              color: ColorsManager.whiteSugar,
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        Text(
-          '3:23',
-          style: TextStyle(
-            color: ColorsManager.whiteSugar,
-            fontSize: 32,
-            fontWeight: FontWeight.w700,
+          Text(
+            '3:23',
+            style: TextStyle(
+              color: ColorsManager.whiteSugar,
+              fontSize: 32,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-        Text(
-          'pm',
-          style: TextStyle(
-            color: ColorsManager.whiteSugar,
-            fontSize: 16,
-            fontWeight: FontWeight.w700,
+          Text(
+            'pm',
+            style: TextStyle(
+              color: ColorsManager.whiteSugar,
+              fontSize: 16,
+              fontWeight: FontWeight.w700,
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
