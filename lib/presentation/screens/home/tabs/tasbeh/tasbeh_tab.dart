@@ -9,10 +9,31 @@ class TasbehTab extends StatefulWidget {
   State<TasbehTab> createState() => _TasbehTabState();
 }
 
-class _TasbehTabState extends State<TasbehTab> {
+class _TasbehTabState extends State<TasbehTab> with TickerProviderStateMixin {
   List<String> tasbehList = ['سبحان الله', 'الحمد لله', 'لا اله الا الله', 'الله اكبر'];
   int _counter = 0;
   int _currentTasbehIndex = 0;
+
+  late AnimationController _controller;
+  late Animation<double> _rotationAnimation;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    );
+    _rotationAnimation = Tween<double>(begin: 0, end: 3.14159 / 180).animate(
+      CurvedAnimation(parent: _controller, curve: Curves.easeInOut),
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
 
   void _incrementCounter() {
     if (_counter < 30) {
@@ -24,6 +45,10 @@ class _TasbehTabState extends State<TasbehTab> {
         _counter = 0;
         _currentTasbehIndex = (_currentTasbehIndex + 1) % tasbehList.length;
       });
+    }
+
+    if (!_controller.isAnimating) {
+      _controller.forward(from: 0);
     }
   }
 
@@ -63,11 +88,22 @@ class _TasbehTabState extends State<TasbehTab> {
               Stack(
                 alignment: AlignmentDirectional.center,
                 children: [
-                  Positioned(top: 0.5, child: Image.asset(AssetImages.alsebhaHead)),
-                  Image.asset(AssetImages.alsebhaBody),
+                  // Sebha Head image with rotation
+                  Positioned(
+                    top: 0.5,
+                    child: RotationTransition(
+                      turns: _rotationAnimation,
+                      child: Image.asset(AssetImages.alsebhaHead),
+                    ),
+                  ),
+                  // Sebha Body image with rotation
+                  RotationTransition(
+                    turns: _rotationAnimation,
+                    child: Image.asset(AssetImages.alsebhaBody),
+                  ),
                   InkWell(
                     onTap: () {
-                      _incrementCounter();
+                      _incrementCounter(); // Increment counter and trigger rotation for both images
                     },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
